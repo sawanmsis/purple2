@@ -1,2 +1,22 @@
-<iframe src="http://35.233.202.46/dashboards/2-stock-analysis?fullscreen&p_date_range=2015-11-19--2022-08-30
-" title=""></iframe>
+<div id="visualization" style="width: 100vw;height:100vh"></div>
+<script src="../carrotsearch.foamtree.js"></script>
+<script>
+    // Initialize FoamTree after the whole page loads to make sure
+    // the element has been laid out and has non-zero dimensions.
+    window.addEventListener("load", function() {
+      var foamtree = new CarrotSearchFoamTree({
+        // Identifier of the HTML element defined above
+        id: "visualization",
+
+        // Some data to visualize.
+        dataObject: {
+          groups: [
+            { label: "Your", weight: 1.0 },
+            { label: "First", weight: 3.0 },
+            { label: "FoamTree", weight: 2.0 },
+            { label: "Visualization", weight: 4.0 }
+          ]
+        }
+      });
+    });
+  </script>
