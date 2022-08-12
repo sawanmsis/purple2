@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Linear Regression Using Tensorflow JS</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"
+        integrity="sha512-8bHTC73gkZ7rZ7vpqUQThUDhqcNFyYi2xgDgPDHc+GXVGHXq+xPjynxIopALmOPqzo9JZj0k6OqqewdGO3EsrQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@2.0.0/dist/tf.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-vis@1.0.2/dist/tfjs-vis.umd.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"
+        integrity="sha512-dqw6X88iGgZlTsONxZK9ePmJEFrmHwpuMrsUChjAw1mRUhUITE5QU9pkcSox+ynfLhL15Sv2al5A0LVyDCmtUw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <style>
+        .left {
+            text-align: left;
+        }
+
+        .hide {
+            display: none !important;
+        }
+    </style>
+</head>
+
+<body style="margin-top:10vh;">
+
+    <div class="ui placeholder segment raised stacked container">
+        <div class="ui column stackable center aligned grid">
+            <div class="middle aligned row">
+                <div class="column">
+                    <div class="ui form">
+                        <div class="grouped fields left">
+                            <label for="fruit">Select an equation:</label>
+                            <div class="field left">
+                                <div class="ui radio checkbox">
+                                    <input type="radio" name="equation" checked="" value="1" tabindex="0"
+                                        class="hidden">
+                                    <label><b>Y</b> = (2<b>X</b>+3) * 3</label>
+                                </div>
+                            </div>
+                            <div class="field left">
+                                <div class="ui radio checkbox">
+                                    <input type="radio" name="equation" tabindex="0" value="2" class="hidden">
+                                    <label><b>Y</b>/2 = <b>X</b></label>
+                                </div>
+                            </div>
+                            <div class="field left">
+                                <div class="ui radio checkbox">
+                                    <input type="radio" name="equation" tabindex="0" value="3" class="hidden">
+                                    <label><b>Y</b> = <b>X</b>+4 </label>
+                                </div>
+                            </div>
+                            <div class="field left">
+                                <div class="ui radio checkbox">
+                                    <input type="radio" name="equation" tabindex="0" value="4" class="hidden">
+                                    <label><b>Y</b>/2 = 10 + (<b>X/2<sup>2</sup></b>)</label>
+                                </div>
+                            </div>
+                            <div class="field left">
+                                <label>Training Data Size</label>
+                                <input type="text" id="tds" placeholder="500" value="400">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button class="ui primary button" onclick="generate_data()">
+            Generate Training Data
+        </button>
+        <br>
+
+        <button class="ui primary button hide gm" onclick="generatemodel()">
+            Initiate Model
+        </button>
+        <br>
+
+        <button class="ui primary button hide tm" onclick="trainmodel(this)">
+            Train Model
+        </button>
+        <br>
+
+        <button class="ui primary button hide tem" onclick="testmodel()">
+            Test Model
+        </button>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
